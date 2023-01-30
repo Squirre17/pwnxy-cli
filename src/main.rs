@@ -26,6 +26,7 @@ async fn echo(req_body: String) -> impl Responder {
     let data = general_purpose::STANDARD
                                .decode(req_body)
                                .unwrap();
+    // println!("{}", data); TODO: add pane 
     println!("{}", String::from_utf8(data).unwrap());
 
     HttpResponse::Ok()
